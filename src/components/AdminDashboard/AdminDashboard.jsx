@@ -24,7 +24,7 @@ const AdminDashboard = () => {
     const fetchMembers = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5000/api/auth/user/get-members",
+          "/api/auth/user/get-members",
           {
             withCredentials: true,
           }
@@ -44,7 +44,7 @@ const AdminDashboard = () => {
   const handleViewTasks = async (userId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/tasks/get-tasks/${userId}`,
+        `/api/tasks/get-tasks/${userId}`,
         {
           withCredentials: true,
         }
@@ -63,7 +63,7 @@ const AdminDashboard = () => {
     if (!newTask) return;
     try {
       await axios.post(
-        `http://localhost:5000/api/tasks/create-task/${selectedUserId}`, // Match the backend route!
+        `/api/tasks/create-task/${selectedUserId}`, // Match the backend route!
         {
           title: newTask.title,
           description: newTask.description,
@@ -86,7 +86,7 @@ const AdminDashboard = () => {
   const handleDeleteTask = async (taskId) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/tasks/delete-task/${taskId}`,
+        `/api/tasks/delete-task/${taskId}`,
         {
           withCredentials: true,
         }
@@ -111,7 +111,7 @@ const AdminDashboard = () => {
   const handleUpdateTaskStatus = async (taskId, newStatus) => {
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/tasks/update-status/${taskId}`,
+        `/api/tasks/update-status/${taskId}`,
         { status: newStatus },
         { withCredentials: true }
       );
