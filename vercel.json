@@ -1,9 +1,10 @@
 {
     "rewrites": [
       {
-        "source": "/(.*)",
-        "destination": "/index.html"
-      }
+        "source": "/api/:path*",
+        "destination": "https://task-management-assignment-backend.onrender.com/api/:path*"
+      },
+      { "source": "/(.*)", "destination": "/" }
     ]
   }
   
