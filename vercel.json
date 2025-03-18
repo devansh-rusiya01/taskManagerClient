@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/api/:path*",
+        "destination": "https://task-management-assignment-backend.onrender.com/api/:path*"
+      }
+    ]
+  }
+  
